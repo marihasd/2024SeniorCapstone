@@ -1,0 +1,48 @@
+/* Body Layout */
+body {
+    display: flex;
+    flex-direction: row; /* Ensure horizontal layout */
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: row; /* Tabs on the left, content in the middle */
+    width: 100%;
+}
+
+/* Tabs Styling */
+.tabs {
+    width: 15%; /* Adjusted width */
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    margin-left: 5%; /* Center content */
+    width: 80%; /* Adjust as needed */
+}
+
+/* Form Container - General Styling */
+.form-container {
+    display: none; /* Hidden by default */
+    margin: 0 auto; /* Center align within content */
+    max-width: 600px; /* Restrict maximum width */
+}
+
+/* Form Container - Active State */
+.form-container.active {
+    display: block; /* Show active forms */
+    margin: 0 auto;
+    max-width: 80%; /* Ensure wide visibility */
+}

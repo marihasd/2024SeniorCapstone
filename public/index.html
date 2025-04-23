@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        #container {
+            display: flex;
+            flex: 1;
+        }
+
+        #sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ccc;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        #sidebar ul {
+            list-style-type: none;
+        }
+
+        #sidebar li {
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        #sidebar li:hover {
+            background-color: #ddd;
+        }
+
+        #main {
+            width: 80%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        form input, form select, form textarea, form button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Inventory Management System
+    </header>
+    <div id="container">
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li data-tab="product-type">Add Product Type</li>
+                <li data-tab="insert-individual-product">Add Individual Product</li>
+                <li data-tab="product-description">Add Product Description</li>
+                <li data-tab="supplier">Add Supplier</li>
+                <li data-tab="purchase">Add Purchase</li>
+                <li data-tab="shipping-purchase">Add Shipment</li>
+                <li data-tab="shipping">Add Shipping</li>
+                <li data-tab="batch">Add Batch</li>
+                <li data-tab="sale">Add Sale</li>
+                <li data-tab="search-product">Search Product</li>
+                <li data-tab="move-inventory">Move Inventory</li>
+                <li data-tab="inventory-levels">Inventory Levels</li>
+                <li data-tab="inventory-lifespan">Inventory Lifespan</li>
+                <li data-tab="sales-report">Sales Report</li>
+                <li data-tab="orders-report">Orders Report</li>
+                <li data-tab="reorder-points">Reorder Points</li>
+                <li data-tab="inventory-tracking">Inventory Tracking</li>
+                <li data-tab="stock-over-time">Stock Over Time</li>
+                <li data-tab="order-arrival-time-accuracy">Order Arrival Time Accuracy</li>
+                <li data-tab="item-timeline">Item Timeline</li>
+                <li data-tab="item-profit">Item Profit Report</li>
+            </ul>   
+        </div>
+
+        <!-- Main Content -->
+        <div id="main">
+            <div id="forms" class="tab-content">
+                <p>Select an action from the sidebar to fill a form.</p>
+            </div>
+            <div id="results" class="tab-content"></div>
+            <div id="reports" class="tab-content"></div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
